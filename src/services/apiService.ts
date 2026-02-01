@@ -4,7 +4,7 @@ import { Product } from "../models/Product.js";
 async function fetchData(url: string): Promise<Product[]> {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error("network response was not ok");
+    throw new Error("connection to url is not ok");
   }
   const data = await response.json();
   const products = await data.products.map(
@@ -16,7 +16,6 @@ async function fetchData(url: string): Promise<Product[]> {
         product.discountPercentage,
       ),
   );
-  console.log(products);
   return products;
 }
 

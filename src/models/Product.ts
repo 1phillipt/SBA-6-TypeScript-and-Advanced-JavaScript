@@ -23,7 +23,7 @@ export class Product {
 
 
   getPriceWithDiscount():number{
-    return this.price - this.price * this.discountPercentage;
+    return this.price - (this.price * this.discountPercentage/100);
   }
 
 }
