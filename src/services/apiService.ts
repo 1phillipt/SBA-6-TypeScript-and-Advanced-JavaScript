@@ -1,8 +1,5 @@
 import { Product } from "../models/Product.js";
 
-let url =
-  "https://dummyjson.com/products?limit=10&skip=10&select=title,price,discountPercentage";
-
 
 async function fetchData(url: string): Promise<Product[]> {
   const response = await fetch(url);
@@ -23,4 +20,5 @@ async function fetchData(url: string): Promise<Product[]> {
   return products;
 }
 
-fetchData(url);
+
+export {fetchData}
