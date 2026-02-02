@@ -1,10 +1,11 @@
 import { Product } from "../models/Product.js";
+import { isConnectionOk } from "../utils/errorHandler.js";
 
 
 async function fetchData(url: string): Promise<Product[]> {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error("connection to url is not ok");
+    throw new isConnectionOk("url connection error");
   }
   const data = await response.json();
   const products = await data.products.map(
