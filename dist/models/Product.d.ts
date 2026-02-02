@@ -1,10 +1,10 @@
 export declare class Product {
-    name: string;
     id: number;
+    title: string;
     price: number;
-    discount: number;
-    constructor(name: string, id: number, price: number, discount: number);
-    disPlayDetails(): Product;
+    discountPercentage: number;
+    constructor(id: number, title: string, price: number, discountPercentage: number);
+    displayDetails(): string;
     getPriceWithDiscount(): number;
 }
 //# sourceMappingURL=Product.d.ts.map

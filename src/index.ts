@@ -1,6 +1,7 @@
 import { Product } from "./models/Product.js";
 import { fetchData } from "./services/apiService.js";
-import { isProductListEmpty } from "./utils/errorHandler.js";
+import { isConnectionOk, isProductListEmpty } from "./utils/errorHandler.js";
+
 import { calculateDiscount } from "./utils/discountCalculator.js";
 import { calculateTax } from "./utils/taxCalculator.js";
 
@@ -29,8 +30,7 @@ async function fetchAllData(){
     });
     
   } catch (Error) {
-    console.log(Error);
-
+      new isConnectionOk("please see the connection to url");
   }
 }
 await fetchAllData();

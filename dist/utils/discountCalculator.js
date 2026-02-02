@@ -1,7 +1,5 @@
 import { Product } from "../models/Product.js";
-calculateDiscount();
-(discount => discount());
-discount: number;
-{
+export function calculateDiscount(price, discount) {
+    return (discount / 100) * price;
 }
 //# sourceMappingURL=discountCalculator.js.map
