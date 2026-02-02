@@ -18,7 +18,7 @@ let newPriceWithTaxAndDiscount: Product[]=[] ;
 
         newPriceWithTaxAndDiscount = products.map(product =>{
 
-         let priceAferTaxAndDiscount:number = product.price - (product.price * product.discountPercentage) + calculateTax(product.price , 7);
+         let priceAferTaxAndDiscount:number = product.price - calculateDiscount(product.price,product.discountPercentage) + calculateTax(product.price , 7);
 
           return  new Product(product.id,product.title,priceAferTaxAndDiscount,product.discountPercentage);
         }) 
